@@ -120,3 +120,26 @@ nextBtn.addEventListener('click', () => {
         quizContainer.style.display = 'none';
     }
 });
+
+function startQuiz() {
+    quizContainer.style.display = 'flex';
+    score = 0; // Reset score at start
+    currentQuestionIndex = 0;
+    loadQuestion();
+}
+
+// Update the score dynamically
+function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionContainer.innerHTML = `
+        <p>${currentQuestion.question}</p>
+        ${currentQuestion.options.map((option, index) => {
+            return `
+                <label for="option${index}">
+                    <input type="radio" name="answer" id="option${index}" value="${option}">
+                    ${option}
+                </label>`;
+        }).join('')}
+        <div id="score">Score: ${score} / 5</div>
+    `;
+}
