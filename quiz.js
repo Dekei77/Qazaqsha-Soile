@@ -11,54 +11,64 @@ const nextBtn = document.getElementById('next-question-btn');
 // Вопросы для квиза
 const questions = [
     {
-        question: "What does HTML stand for?",
+        question: "Төмендегі сөздердің қайсысы сын есім?",
         options: [
-            "A. Hyper Type Multi Language",
-            "B. Hyper Text Multiple Language",
-            "C. Hyper Text Markup Language",
-            "D. Home Text Multi Language"
+            "A. Кітап",
+            "B. Жақсы",
+            "C. Оқу",
+            "D. Адам"
         ],
-        answer: "C. Hyper Text Markup Language"
+        answer: "B. Жақсы"
     },
     {
-        question: "What does CSS stand for?",
+        question: "Төмендегі сөздердің қайсысы сан?",
         options: [
-            "A. Cascading Style Sheets",
-            "B. Coded Style Sheets",
-            "C. Computer Style Sheets",
-            "D. Styles Sheets"
+            "A. Үй",
+            "B. Бес",
+            "C. Күн",
+            "D. Су"
         ],
-        answer: "A. Cascading Style Sheets"
+        answer: "B. Бес"
     },
     {
-        question: "What is the correct HTML element for the largest heading?",
+        question: "Төмендегі сөйлемдердің қайсысы дұрыс сұрақ?",
         options: [
-            "A. <h1>",
-            "B. <heading>",
-            "C. <head>",
-            "D. <h6>"
+            "A. Сен қайда барасың?",
+            "B. Сен барасың қайда?",
+            "C. Қайда сен барасың?",
+            "D. Барасың сен қайда?"
         ],
-        answer: "A. <h1>"
+        answer: "A. Сен қайда барасың?"
     },
     {
-        question: "Which HTML attribute is used to define inline styles?",
+        question: "'Кітап' сөзінің көпше түрі қалай жазылады?",
         options: [
-            "A. style",
-            "B. class",
-            "C. font",
-            "D. styles"
+            "A. Кітаптар",
+            "B. Кітаптер",
+            "C. Кітаптарлар",
+            "D. Кітаптерлер"
         ],
-        answer: "A. style"
+        answer: "A. Кітаптар"
     },
     {
-        question: "How do you add a comment in HTML?",
+        question: "Антоним дегеніміз не?",
         options: [
-            "A. // This is a comment",
-            "B. <!-- This is a comment -->",
-            "C. ' This is a comment",
-            "D. -- This is a comment --"
+            "A. Бір-біріне ұқсас сөздер",
+            "B. Бір-біріне қарама-қарсы мағынасы бар сөздер",
+            "C. Синонимдер",
+            "D. Сөздердің көпше түрі"
         ],
-        answer: "B. <!-- This is a comment -->"
+        answer: "B. Бір-біріне қарама-қарсы мағынасы бар сөздер"
+    },
+    {
+        question: "'Жылдам' сөзінің антонимі қандай?",
+        options: [
+            "A. Қиын",
+            "B. Тез",
+            "C. Жеңіл",
+            "D. Баяу"
+        ],
+        answer: "D. Баяу"
     }
 ];
 
