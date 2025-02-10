@@ -196,14 +196,15 @@ body {
 
 /* Score Display */
 #score {
+    font-size: 16px;
+    margin-left: 10px;
     background: #9b2c98;
     color: white;
-    font-size: 14px;
     padding: 4px 12px;
     border-radius: 6px;
     display: inline-block;
-    margin-top: 5px;
 }
+
 
 /* Question Container */
 #question-container {

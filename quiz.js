@@ -140,6 +140,43 @@ function loadQuestion() {
                     ${option}
                 </label>`;
         }).join('')}
-        <div id="score">Score: ${score} / 5</div>
+         <div id="score">Score: ${score} / 5</div>
     `;
 }
+
+function updateScore() {
+    document.getElementById('score').textContent = `Score: ${score} / 5`;
+}
+
+function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionContainer.innerHTML = `
+        <p>${currentQuestion.question}</p>
+        ${currentQuestion.options.map((option, index) => {
+            return `
+                <label for="option${index}">
+                    <input type="radio" name="answer" id="option${index}" value="${option}">
+                    ${option}
+                </label>`;
+        }).join('')}
+    `;
+    updateScore();
+}
+
+nextBtn.addEventListener('click', () => {
+    const selectedOption = document.querySelector('input[name="answer"]:checked');
+    if (selectedOption) {
+        if (selectedOption.value === questions[currentQuestionIndex].answer) {
+            score++;
+        }
+    }
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+    } else {
+        alert(`Quiz Over! Your score is ${score} out of 5.`);
+        quizContainer.style.display = 'none';
+    }
+});
+
