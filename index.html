@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qazaqsha Soile</title>
+
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- Меню -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Qazaqsha Soile</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="read.html">Оқы</a></li>
+                <li><a href="video.html">Көру</a></li>
+                <li><a href="audio.html">Тыңда</a></li>
+                <li><a href="quiz.html">Тесттер</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="wrapper">
+        <div class="content">
+            <header class="hero-section">
+                <div class="container">
+                    <div data-speed=".75" class="main-header">
+                        <h1 class="main-title">Qazaqsha Soile</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="portfolio">
+                <div class="container">
+                    <main class="gallery">
+                        <div data-speed=".9" class="gallery__left">
+                            <img class="gallery__item" src="img/work/1.png" alt="Alt">
+                            <div class="text-block gallery__item">
+                                <h2 class="text-block__h">Оқы</h2>
+                                <p class="text-block__p">Қазақ тілін үйренуге арналған әртүрлі оқу материалдарымен танысыңыз. Мақалалар мен әңгімелерден бастап, тарихи мәтіндерге дейін өзіңізге қызықты нәрсені таба аласыз.</p>
+                                <a href="read.html" class="btn">Оқыға өту</a>
+                            </div>
+                            <img class="gallery__item" src="img/work/2.png" alt="Alt">
+                            <div class="text-block gallery__item">
+                                <h2 class="text-block__h">Көру</h2>
+                                <p class="text-block__p">Қазақ тілін көңілді әрі интерактивті түрде үйренуге арналған бейнемазмұнды қараңыз. Бұл видеоларда білім беру контенттері, оқулықтар және мәдени бейнемазмұндар бар.</p>
+                                <a href="video.html" class="btn">Көруге өту</a>
+                            </div>
+                            <img class="gallery__item" src="img/work/6.jpg" alt="Alt">
+                        </div>
+
+                        <div data-speed="1.1" class="gallery__right">
+                            <div class="text-block gallery__item">
+                                <h2 class="text-block__h">Тыңда</h2>
+                                <p class="text-block__p">Қазақ тілінде тыңдау дағдыларын жақсартуға арналған аудио контенттерді тыңдаңыз. Подкасттар, әңгімелер және тіл үйрену сабағы сияқты мазмұндар бар.</p>
+                                <a href="audio.html" class="btn">Тыңдауға өту</a>
+                            </div>
+                            <img class="gallery__item" src="img/work/4.g" alt="Alt">
+                            <div class="text-block gallery__item">
+                                <h2 class="text-block__h">Тесттер</h2>
+                                <p class="text-block__p">Қазақ тілі бойынша әртүрлі тақырыптарда тест тапсырып, өз біліміңізді тексеріңіз. Сөздік қорынан бастап грамматикаға дейін, осы тесттер үйренген нәрселеріңізді бекітуге көмектеседі.</p>
+                                <a href="quiz.html" class="btn">Тестке өту</a>
+                            </div>
+                            <img class="gallery__item" src="img/work/5.jpg" alt="Alt">
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript для мобильного меню
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
