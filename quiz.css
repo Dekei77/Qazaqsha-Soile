@@ -84,7 +84,7 @@ body {
 .start-quiz-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #1b1d1d;
+    background-color: #9B2C98;
     border: none;
     color: white;
     cursor: pointer;
@@ -93,7 +93,7 @@ body {
 }
 
 .start-quiz-btn:hover {
-    background-color: #1b1d1d;
+    background-color: #6A1E63;
 }
 
 /* Modal Styles */
@@ -111,8 +111,8 @@ body {
 }
 
 .modal-content {
-    background-color: #fff;
-    color: #333;
+    background-color: #2e2e2e;
+    color: #fff;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
@@ -131,7 +131,7 @@ body {
 }
 
 .modal .btnn {
-    background-color: #1b1d1d;
+    background-color: #9B2C98;
     padding: 10px 20px;
     color: white;
     font-size: 1.1rem;
@@ -143,5 +143,26 @@ body {
 }
 
 .modal .btnn:hover {
-    background-color: #1b1d1d;
+    background-color: #6A1E63;
+}
+
+/* Question and Options */
+#question-container {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#question-container p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#question-container label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#question-container input {
+    margin-right: 10px;
 }
