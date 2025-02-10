@@ -12,62 +12,32 @@ const nextBtn = document.getElementById('next-question-btn');
 const questions = [
     {
         question: "Төмендегі сөздердің қайсысы сын есім?",
-        options: [
-            "A. Кітап",
-            "B. Жақсы",
-            "C. Оқу",
-            "D. Адам"
-        ],
+        options: ["A. Кітап", "B. Жақсы", "C. Оқу", "D. Адам"],
         answer: "B. Жақсы"
     },
     {
         question: "Төмендегі сөздердің қайсысы сан?",
-        options: [
-            "A. Үй",
-            "B. Бес",
-            "C. Күн",
-            "D. Су"
-        ],
+        options: ["A. Үй", "B. Бес", "C. Күн", "D. Су"],
         answer: "B. Бес"
     },
     {
         question: "Төмендегі сөйлемдердің қайсысы дұрыс сұрақ?",
-        options: [
-            "A. Сен қайда барасың?",
-            "B. Сен барасың қайда?",
-            "C. Қайда сен барасың?",
-            "D. Барасың сен қайда?"
-        ],
+        options: ["A. Сен қайда барасың?", "B. Сен барасың қайда?", "C. Қайда сен барасың?", "D. Барасың сен қайда?"],
         answer: "A. Сен қайда барасың?"
     },
     {
         question: "'Кітап' сөзінің көпше түрі қалай жазылады?",
-        options: [
-            "A. Кітаптар",
-            "B. Кітаптер",
-            "C. Кітаптарлар",
-            "D. Кітаптерлер"
-        ],
+        options: ["A. Кітаптар", "B. Кітаптер", "C. Кітаптарлар", "D. Кітаптерлер"],
         answer: "A. Кітаптар"
     },
     {
         question: "Антоним дегеніміз не?",
-        options: [
-            "A. Бір-біріне ұқсас сөздер",
-            "B. Бір-біріне қарама-қарсы мағынасы бар сөздер",
-            "C. Синонимдер",
-            "D. Сөздердің көпше түрі"
-        ],
+        options: ["A. Бір-біріне ұқсас сөздер", "B. Бір-біріне қарама-қарсы мағынасы бар сөздер", "C. Синонимдер", "D. Сөздердің көпше түрі"],
         answer: "B. Бір-біріне қарама-қарсы мағынасы бар сөздер"
     },
     {
         question: "'Жылдам' сөзінің антонимі қандай?",
-        options: [
-            "A. Қиын",
-            "B. Тез",
-            "C. Жеңіл",
-            "D. Баяу"
-        ],
+        options: ["A. Қиын", "B. Тез", "C. Жеңіл", "D. Баяу"],
         answer: "D. Баяу"
     }
 ];
@@ -84,6 +54,7 @@ startQuizBtn.addEventListener('click', () => {
 exitQuizBtn.addEventListener('click', () => {
     alert('You have exited the quiz');
     quizModal.style.display = 'none'; // Скрыть модальное окно с гайдом
+    quizContainer.style.display = 'none'; // Скрыть сам квиз
 });
 
 // Продолжить квиз
@@ -95,98 +66,57 @@ continueQuizBtn.addEventListener('click', () => {
 // Начинаем квиз
 function startQuiz() {
     quizContainer.style.display = 'flex';
+    score = 0; // Сбросить счет перед новым квизом
+    currentQuestionIndex = 0;
     loadQuestion();
 }
 
 // Загружаем вопрос
 function loadQuestion() {
+    if (currentQuestionIndex >= questions.length) {
+        endQuiz();
+        return;
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
     questionContainer.innerHTML = `
         <p>${currentQuestion.question}</p>
-        ${currentQuestion.options.map((option, index) => {
-            return `<input type="radio" name="answer" id="option${index}" value="${option}">
-                    <label for="option${index}">${option}</label><br>`;
-        }).join('')}
+        ${currentQuestion.options.map((option, index) => `
+            <label for="option${index}">
+                <input type="radio" name="answer" id="option${index}" value="${option}">
+                ${option}
+            </label><br>
+        `).join('')}
     `;
-    scoreDisplay.textContent = `${score} / 5`;
+
+    updateScore();
+}
+
+// Обновление счета
+function updateScore() {
+    scoreDisplay.textContent = `Ұпай: ${score} / ${questions.length}`;
 }
 
 // Обработчик кнопки "Next"
 nextBtn.addEventListener('click', () => {
     const selectedOption = document.querySelector('input[name="answer"]:checked');
-    if (selectedOption) {
-        const correctAnswer = questions[currentQuestionIndex].answer;
-        if (selectedOption.value === correctAnswer) {
-            score++;
-        }
+
+    if (!selectedOption) {
+        alert("Жауапты таңдаңыз!");
+        return;
+    }
+
+    if (selectedOption.value === questions[currentQuestionIndex].answer) {
+        score++;
     }
 
     currentQuestionIndex++;
-
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
-    } else {
-        alert(`Quiz Over! Your score is ${score} out of 5.`);
-        quizContainer.style.display = 'none';
-    }
-});
-
-function startQuiz() {
-    quizContainer.style.display = 'flex';
-    score = 0; // Reset score at start
-    currentQuestionIndex = 0;
     loadQuestion();
-}
-
-// Update the score dynamically
-function loadQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionContainer.innerHTML = `
-        <p>${currentQuestion.question}</p>
-        ${currentQuestion.options.map((option, index) => {
-            return `
-                <label for="option${index}">
-                    <input type="radio" name="answer" id="option${index}" value="${option}">
-                    ${option}
-                </label>`;
-        }).join('')}
-         <div id="score">Score: ${score} / 5</div>
-    `;
-}
-
-function updateScore() {
-    document.getElementById('score').textContent = `Score: ${score} / 5`;
-}
-
-function loadQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionContainer.innerHTML = `
-        <p>${currentQuestion.question}</p>
-        ${currentQuestion.options.map((option, index) => {
-            return `
-                <label for="option${index}">
-                    <input type="radio" name="answer" id="option${index}" value="${option}">
-                    ${option}
-                </label>`;
-        }).join('')}
-    `;
-    updateScore();
-}
-
-nextBtn.addEventListener('click', () => {
-    const selectedOption = document.querySelector('input[name="answer"]:checked');
-    if (selectedOption) {
-        if (selectedOption.value === questions[currentQuestionIndex].answer) {
-            score++;
-        }
-    }
-
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
-    } else {
-        alert(`Quiz Over! Your score is ${score} out of 5.`);
-        quizContainer.style.display = 'none';
-    }
 });
+
+// Завершение квиза
+function endQuiz() {
+    alert(`Quiz Over! Ұпай саны: ${score} / ${questions.length}.`);
+    quizContainer.style.display = 'none';
+}
 
