@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background */
+body {
+    background: #1b1d1d;
+    color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #1b1d1d;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #2980b9;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.start-quiz-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #1b1d1d;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.start-quiz-btn:hover {
+    background-color: #1b1d1d;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.modal h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.modal ol {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.modal .btnn {
+    background-color: #1b1d1d;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.modal .btnn:hover {
+    background-color: #1b1d1d;
+}
