@@ -84,7 +84,7 @@ body {
 .start-quiz-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #9B2C98;
+    background-color: #2980b9;
     border: none;
     color: white;
     cursor: pointer;
@@ -93,7 +93,7 @@ body {
 }
 
 .start-quiz-btn:hover {
-    background-color: #6A1E63;
+    background-color: #0f3853;
 }
 
 /* Modal Styles */
@@ -131,7 +131,7 @@ body {
 }
 
 .modal .btnn {
-    background-color: #9B2C98;
+    background-color: #2980b9;
     padding: 10px 20px;
     color: white;
     font-size: 1.1rem;
@@ -143,7 +143,7 @@ body {
 }
 
 .modal .btnn:hover {
-    background-color: #6A1E63;
+    background-color: #0f3853;
 }
 
 /* Question and Options */
@@ -179,7 +179,7 @@ body {
     background: #15122b;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0px 0px 15px #9b2c98;
+    box-shadow: 0px 0px 15px #2980b9;
     text-align: center;
     overflow: hidden; /* Prevents unnecessary scrolling */
 }
@@ -189,7 +189,7 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to right, #ff00ff, #9900cc);
+    background: linear-gradient(to right, #5998c2, #116495);
     padding: 8px;
     border-radius: 8px;
 }
@@ -198,7 +198,7 @@ body {
 #score {
     font-size: 16px;
     margin-left: 10px;
-    background: #9b2c98;
+    background: #2980b9;
     color: white;
     padding: 4px 12px;
     border-radius: 6px;
@@ -236,7 +236,7 @@ body {
 
 /* Hover effect for options */
 #question-container label:hover {
-    background: #9b2c98;
+    background: #195177;
     color: white;
     border: 1px solid white;
 }
@@ -246,7 +246,7 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background: linear-gradient(to right, #ff00ff, #9900cc);
+    background: linear-gradient(to right,  #5998c2, #116495);
     border: none;
     color: white;
     cursor: pointer;
@@ -256,5 +256,5 @@ body {
 }
 
 #next-question-btn:hover {
-    background: linear-gradient(to right, #9900cc, #ff00ff);
+    background: linear-gradient(to right,  #5998c2, #116495);
 }
